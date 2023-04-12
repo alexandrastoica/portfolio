@@ -1,0 +1,69 @@
+---
+title: 'Dementia Environmental Assessment Tool'
+slug: 'dementia-environmental-assessment-tool'
+description: 'Paper-based tool turned mobile app'
+label: 'Mobile app'
+date: 'May 2017'
+year: 2017
+links:
+  - https://github.com/alexandrastoica/ionic2-assessment-app
+context:
+  - 'Media Lab, University of Worcester, UK'
+  - 'Collaboration with NHS Kings Fund and Association for Dementia Studies'
+keywords:
+  - Angular
+  - HTML5
+  - Sass
+  - Javascript
+  - Typescript
+  - PouchDB
+---
+
+## Challenge
+
+In Year 2 and 3 of my undergraduate studies (2015 - 2017), I worked for University of Worcester's Media Lab. There, I got the opportunity to work with the Association of Dementia Studies, based on campus. They had been working on a [paper-based tool for dementia environmental assessment](https://www.kingsfund.org.uk/projects/enhancing-healing-environment/ehe-design-dementia). The tool consisted of a series of questions based on environments which care workers had to evaluate on a 1 to 5 scale. The problem they were facing was increasing amounts of data that required tedious manual work with no easy way to analyse it. They were seeking for a better, accessible, and secured way of gathering this data.
+
+As a result, I built a mobile app for iOS and Android which enabled the centralisation of data and streamlined manual processing by implementing an exporting feature via csv format.
+
+## Initial research
+
+After familiarising myself with the context of the tool, I collated a list of considerations that would help inform the design and development process:
+
+- A mobile app is most suitable because of its ubiquitous nature
+- Protect privacy: secure and anonymise data
+- Care workers would use this app to log in data for patients
+- The app had to be usable offline because many care homes did not have Wi-Fi and couldn’t rely on constant Internet connection
+- Design a user experience that addresses constraints in mobile apps, and the user-group specific needs
+- Ensure W3C accessibility compliance
+- Collaboration with the client in order to set the requirements - we could not undertake user testing ourselves
+
+## Initial design
+
+I designed a simple interface which consisted of three main views:
+
+- **Login view**: to ensure we protect the data, a user had to create a password protected account to be able to use it
+- **Profile view**: here you could see your name and email address
+- **Assessments view**: this is where all assessments could be managed - add, edit, continue, export, delete an assessment
+- **Tutorial view**: this would provide the user with instructions on how to create, complete, export and delete an assessment
+
+The assessment, once opened, displayed a list of categories of the tool and a progress indicator. Each category went through a series of questions, navigable by next and previous buttons.
+
+### Data protection
+
+Because the app was collecting personal information, it didn’t ask for identifiable data, to ensure it was anonymised. The user was also encouraged to export the data as soon as possible and delete the assessment from the app.
+
+## Technologies
+
+After a few rapid prototypes using just HTML/CSS and [Cordova](https://cordova.apache.org/), we decided on a final design and user flow. This was the time to think about what technologies will enable the implementation.
+
+[Ionic framework](https://ionicframework.com/) was a good candidate for hybrid mobile development because it came with a library of iOS and Android UI native components which made it easy to rapidly build the interfaces. It was also an efficient way to develop for both mobile platforms.
+
+At the time of the start of the development process (approx. Summer 2016), Ionic was based on Angularjs. Angular 2 (Typescript) was still in beta, but it was possible to build apps with it by using Ionic 2. I took this as a good opportunity to learn Typescript and the new Angular. The app was scheduled to be used internally in 2017 and possibly released later than that.
+
+When choosing a database, offline capabilities were crucial. I had recently learnt about [PouchDB](https://pouchdb.com/). It enabled offline syncs, which meant the user could use the app seamlessly and the data would be uploaded in the cloud when the app re-connected to the Internet.
+
+Finally, it was important to find a way to export the assessment in an appropriate format. Previously, the data was manually entered in Microsoft Excel from the paper-based tool. This required a serious amount of time and was prone to human error. To alleviate this, the app offered a csv export feature. From client feedback, email attachment was the most accessible to them. As such, the export feature would open the email app on the phone and add it as attachment to a new email which could be sent. Luckily, Ionic came with a plugins API which enabled native behaviour: the [social sharing plugin](https://ionicframework.com/docs/native/social-sharing) for opening the email app and the [file plugin](https://ionicframework.com/docs/native/file) for creating a csv file and adding an attachment. The app was implemented over the next year, until I graduated in 2017.
+
+## Publication
+
+The app was published on Google Play Store.

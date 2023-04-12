@@ -1,0 +1,145 @@
+---
+title: 'PotatoCon'
+slug: 'potatocon'
+description: 'A mobile app for scheduling events and sending out notifications'
+preview: '/posts/potatocon/image1.jpg'
+label: 'Mobile app'
+date: 'September 2017'
+year: 2017
+context:
+  - Summer Internship at Potato, London, UK
+keywords:
+  - Angular
+  - Firebase
+  - Firebase Cloud Functions
+  - HTML5
+  - Sass
+  - Javascript
+  - Typescript
+  - Ionic framework
+  - xCode
+---
+
+<div className="img__wrapper">
+  <Image
+    src="/posts/potatocon/image1.jpg"
+    alt="PotatoCon logo"
+    height="360"
+    width="480"
+    priority
+    style={{
+      width: '100%',
+      height: 'auto',
+    }}
+  />
+</div>
+<p className="legend">Figure 1: PotatoCon logo (not my design)</p>
+
+From July to August 2017, during my summer internship at Potato, I designed and developed an app to manage activities, participants, and send hints (location is kept secret and revealed on the day of departure) for the company's annual offsite.
+
+## Challenge
+
+The people team had been planning the offsite every year. This usually takes place in a secret location for a few days. During the offsite, there are various activities that Potatoes can participate in. A few weeks before the departure, the people team starts sending out hints about the location and what to pack. This was all organised, by handing out printed schedules and sending emails. This felt like an opportunity to help alleviate some of the pain points the organisers and Potatoes had.
+
+## Initial research
+
+I scheduled a meeting with the people team to learn about their process and pain points. User journeys were used to help visualise this. A few of the pain points for the organisers were:
+
+- Having to print out schedules
+- Schedules would get lost
+- People would forget about certain activities
+- Some activities were for a limited number of people and that was difficult to manage without knowing who’s going to participate
+
+From some chats with the Potatoes, I found that they would like:
+
+- to know who else wants to participate to an activity
+- to have a place where they can find the profile of all the Potatoes (since the offsite brought all 3 studios from different locations in the same place)
+- to find the contact information for the people team in case of emergency
+- be reminded of activities
+
+## Preliminary design and requirements
+
+With all this information in mind, I started thinking about requirements and best platforms to help address them. Because during the offsite people would not have laptops with them at all times, and notifications were a recurrent theme, a mobile app was the best choice.
+
+<div className="img__wrapper">
+  <Image
+    src="/posts/potatocon/image2.png"
+    alt="Initial PotatoCon wireframes, made in Sketch"
+    height="360"
+    width="480"
+    style={{
+      width: '100%',
+      height: 'auto',
+    }}
+  />
+</div>
+<p className="legend">Figure 2: Initial PotatoCon wireframes, made in Sketch</p>
+
+### Choosing the tech
+
+Having some experience with hybrid mobile app development from the Dementia Environmental Assessment Tool App I had worked on during Uni, I decided to use the Ionic framework. Because I wanted the app to work offline too, Firebase seemed like a good choice because of it’s Realtime Database quality. I also provided a good way for me to set up a notification system (Firebase Cloud Functions) and it integrated nicely with Angular via AngularFire.
+
+The hybrid application approach was particularly useful because I had exactly one month to develop this app (or at least a first version), as the year’s offsite was approaching, and it could’ve been a great time to test it out. The benefit of being able to export both iOS and Android apps from the same codebase was saving a lot of time. Ionic also provided platform specific components (inline with iOS and Android guidelines respectively), which was useful for rapid prototyping.
+
+### First iteration
+
+I created some wireframes using Sketch and came up with the following requirements:
+
+- Login with Google (company) account
+- Timeline of activities (lists hints before the trip)
+- Update timeline to “today” — will be able to scroll to see other days
+- Admins can add and send hints
+- Admins can create and edit activities
+- Admins can set a maximum number of people that can participate
+- Any activity added appears on timeline, as well as on the events list
+- Users can confirm, see who’s attending, see who’s invited to the event through Google Calendar
+- Integration of “Who” (internal app of Potatoes’ details)
+- Users can search for someone, view profiles and emergency contacts
+- Push notifications for hints, new events, event updates
+- Some events/activities were not at the accommodation, so Google Maps was introduced to help with location
+
+Using an iterative design approach to gain constant feedback, I created a rapid prototype using Ionic and implemented the UI. After some user tests, some of the feedback was to:
+
+- Increase font size and contrast for better readability and accessibility
+- Add more colour in the design (i.e., the header changed to pink instead of white)
+- The statuses (i.e. "You need to confirm") were assigned different colours and icons to be easier to spot the different types of events
+
+### Design rationale
+
+<div className="img__wrapper">
+  <Image
+    src="/posts/potatocon/image3.png"
+    alt="PotatoCon workflow"
+    height="360"
+    width="480"
+    style={{
+      width: '100%',
+      height: 'auto',
+    }}
+  />
+</div>
+<p className="legend">Figure 3: PotatoCon workflow, made in Sketch</p>
+
+To be able to access the app, users have to login with their company account. Once logged in, they can see a timeline with hints, and events which scrolls to the closest event to date as it goes on. Using the tab menu they can access the events view with lists of upcoming, future and past events which tells them if they need to confirm their attendance, if they have confirmed, if it is fully booked, passed, etc. The admins can add, edit, delete events and send hits (as push notifications). The event view shows a map that opens Google Maps when tapping the blue button, as well as more info about the event. Last but not least, Who, the third tab view, displays a list of people that are attending PotatoCon, and allows you to see their picture, email, slack, or call them.
+
+## Final product
+
+The app was designed, developed, tested, and distributed in one month, for both iOS and Android platforms. Although I worked on this project mostly individually, I constantly collaborated with developers, designers and the people team for feedback and improvement. The app was a success, performed well and improved both the organisers’ and Potatoes’ experience.
+
+<div className="img__wrapper">
+  <Image
+    src="/posts/potatocon/image4.png"
+    alt="Final app screenshots, iOS"
+    height="360"
+    width="480"
+    style={{
+      width: '100%',
+      height: 'auto',
+    }}
+  />
+</div>
+<p className="legend">Figure 4: Final app screenshots, iOS</p>
+
+## PS
+
+Many thanks to Potato for an amazing summer internship!
