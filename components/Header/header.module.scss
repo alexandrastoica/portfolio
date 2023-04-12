@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    width: 880px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.title {
+  opacity: 0;
+  width: 100%;
+  padding-inline: var(--sp-m);
+  transition: opacity 0.5s ease 0s;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  background: hsla(var(--base-gray), 98%, 40%);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.5s ease 0s;
+  border-bottom: 1px solid var(--header-nav-border);
+}
