@@ -1,0 +1,154 @@
+@import './reset.scss';
+@import './theme.scss';
+@import './variables.scss';
+@import './typography.scss';
+@import './spacing.scss';
+
+@import './article.scss';
+
+::selection {
+  color: white;
+  background: var(--color-gray-700);
+}
+
+.header__content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-block-end: var(--sp-m);
+}
+
+.loading__wrapper {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.wave-bg {
+  position: absolute;
+  width: 100%;
+  top: 60vh;
+}
+
+.wave-bg-color {
+  background: linear-gradient(
+    180deg,
+    transparent calc(60vh + 3rem),
+    var(--color-wave) 0
+  );
+}
+
+.wave {
+  width: 100%;
+  display: block;
+  height: 3rem;
+
+  path {
+    animation: waves 10s linear infinite;
+  }
+}
+
+@keyframes waves {
+  from {
+    transform: translate(-90px);
+  }
+
+  to {
+    transform: translate(85px);
+  }
+}
+
+hr {
+  height: 1px;
+  width: 100%;
+  background: hsla(0, 0%, 87%, 0.5);
+  border: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.2;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.main__layout {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: fixed;
+    height: 40px;
+    opacity: 0.2;
+    z-index: 3;
+  }
+
+  &::before {
+    inset: 0;
+    background: linear-gradient(to top, transparent, var(--color-gray-300));
+  }
+
+  &::after {
+    width: 100%;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, var(--color-gray-300));
+  }
+}
+
+.card__layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px 16px;
+}
+
+section,
+.section {
+  position: relative;
+  max-width: var(--max-layout-width);
+  padding-block: 4em 2em;
+  padding-inline: 1em;
+  margin-inline: auto;
+  width: 100%;
+}
+
+main {
+  @extend .section;
+}
+
+.footer {
+  width: 100%;
+  margin: 0;
+  padding: var(--sp-m) 0;
+  font-size: 0.75rem;
+
+  &__wrapper {
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: 1fr minmax(auto, 880px) 1fr;
+    column-gap: 16px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: 2 / auto;
+  }
+}
+
+.contact__animation {
+  position: relative;
+  width: 200px;
+  transform: translateX(50%);
+}
+
+.contact__email {
+  position: absolute;
+  top: 100px;
+  left: 200px;
+}
