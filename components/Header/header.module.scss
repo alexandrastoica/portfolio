@@ -26,7 +26,7 @@
   width: 100%;
   top: 0;
   z-index: 10;
-  background: hsla(var(--base-gray), 98%, 40%);
+  background: var(--surface1);
   backdrop-filter: blur(8px);
   transition: border-color 0.5s ease 0s;
   border-bottom: 1px solid var(--header-nav-border);

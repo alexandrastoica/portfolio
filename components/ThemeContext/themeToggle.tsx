@@ -10,7 +10,7 @@ const ThemeToggle = () => {
   return (
     <button
       aria-label="Toggle dark mode"
-      style={{ color: 'var(--color-text)', zIndex: 4, position: 'relative' }}
+      style={{ color: 'var(--text1)', zIndex: 4, position: 'relative' }}
       onClick={() => toggleTheme()}
     >
       {theme == 'light' ? <SunIcon /> : <MoonIcon />}

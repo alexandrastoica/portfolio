@@ -1,7 +1,7 @@
 'use client';
 export default function Logo() {
   return (
-    <a aria-label="homepage" href="/" style={{ color: 'var(--color-text)' }}>
+    <a aria-label="homepage" href="/" style={{ color: 'var(--text1)' }}>
       <svg
         width="36px"
         viewBox="0 0 397 302"

@@ -7,8 +7,8 @@
 @import './article.scss';
 
 ::selection {
-  color: white;
-  background: var(--color-gray-700);
+  color: var(--surface1);
+  background: var(--text2);
 }
 
 .header__content {
@@ -16,6 +16,10 @@
   display: flex;
   justify-content: center;
   padding-block-end: var(--sp-m);
+}
+
+.header__text {
+  padding-inline-end: 56px;
 }
 
 .loading__wrapper {
@@ -62,7 +66,7 @@
 hr {
   height: 1px;
   width: 100%;
-  background: hsla(0, 0%, 87%, 0.5);
+  background: var(--surface2);
   border: none;
 }
 
@@ -78,6 +82,7 @@ hr {
 
 .main__layout {
   position: relative;
+  --shadow-color: var(--surface4);
 
   &::before,
   &::after {
@@ -86,17 +91,17 @@ hr {
     height: 40px;
     opacity: 0.2;
     z-index: 3;
+    width: 100%;
   }
 
   &::before {
-    inset: 0;
-    background: linear-gradient(to top, transparent, var(--color-gray-300));
+    top: 0;
+    background: linear-gradient(to top, transparent, var(--shadow-color));
   }
 
   &::after {
-    width: 100%;
     bottom: 0;
-    background: linear-gradient(to bottom, transparent, var(--color-gray-300));
+    background: linear-gradient(to bottom, transparent, var(--shadow-color));
   }
 }
 

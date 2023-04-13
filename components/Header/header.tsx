@@ -49,7 +49,7 @@ export default function Header({ sticky, title }: HeaderProps) {
       className={cssClasses}
       style={
         {
-          '--header-nav-border': isAtTop ? 'transparent' : 'lightgrey',
+          '--header-nav-border': isAtTop ? 'transparent' : 'var(--surface2)',
         } as CSSProperties
       }
     >

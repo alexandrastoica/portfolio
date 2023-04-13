@@ -94,10 +94,10 @@ a,
 
 // Decorations
 .stroke {
-  --stroke-color: var(--color-text);
+  --stroke-color: var(--text1);
   --stroke: -1px -1px 0 var(--stroke-color), 1px -1px 0 var(--stroke-color),
     -1px 1px 0 var(--stroke-color), 1px 1px 0 var(--stroke-color);
-  color: var(--color-background);
+  color: var(--surface1);
   text-shadow: var(--stroke);
   font-family: var(--code-font, monospace);
   font-size: var(--size-step-4);
@@ -130,7 +130,7 @@ a,
     opacity: 0;
     animation: fadeIn 2s forwards;
     transition: 1s;
-    border: 1px dashed var(--color-text);
+    border: 1px dashed var(--text1);
   }
 }
 

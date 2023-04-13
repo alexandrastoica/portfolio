@@ -18,11 +18,11 @@
   width: fit-content;
   border-radius: 999px;
 
-  color: var(--color-text);
-  background-color: var(--color-background);
+  color: var(--text1);
+  background-color: var(--surface1);
 
-  box-shadow: 0 5px 30px var(--color-gray-300);
-  border: 1px solid var(--color-gray-300);
+  box-shadow: 0 10px 30px hsl(var(--surface-shadow) / var(--shadow-strength));
+  border: 1px solid var(--surface2);
   backdrop-filter: blur(20px) saturate(200%) brightness(100%);
   z-index: 3;
 
@@ -42,6 +42,8 @@
   }
 
   .link {
+    color: var(--text1);
+
     &__list {
       list-style: none;
       display: flex;
@@ -69,14 +71,12 @@
   }
 
   .active {
-    color: var(--color-text);
-
     &::before {
       content: '';
       position: absolute;
       height: 100%;
       width: 100%;
-      background-color: var(--color-gray-300);
+      background-color: var(--surface4);
       opacity: 0.5;
       bottom: 0;
       left: 0;
@@ -86,10 +86,10 @@
 
     &::after {
       content: '';
-      opacity: 0.5;
+      opacity: 0.2;
       position: absolute;
       height: 0.5px;
-      width: calc(100% - 32px);
+      width: calc(100% - 24px);
       background-image: var(--nav-gradient);
       bottom: -5px;
       left: 16px;
