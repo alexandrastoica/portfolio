@@ -32,14 +32,18 @@ export default function Nav() {
       <span className={styles.content}>
         <ul className={styles.link__list}>
           {links.map((link, i) => (
-            <li
-              key={i}
-              className={`${styles.link} ${
-                active?.toLowerCase() == link.toLowerCase() ? styles.active : ''
-              }`}
-              onClick={() => jumpToSection(link)}
-            >
-              {link}
+            <li key={i}>
+              <a
+                href={`#${link}`}
+                className={`${styles.link} ${
+                  active?.toLowerCase() == link.toLowerCase()
+                    ? styles.active
+                    : ''
+                }`}
+                onClick={() => jumpToSection(link)}
+              >
+                {link}
+              </a>
             </li>
           ))}
         </ul>
