@@ -54,7 +54,7 @@ export default function RootLayout({
               <div className="footer__content">
                 <div>
                   <p>ralexandrastoica@gmail.com</p>
-                  <p>&copy; {new Date().getFullYear()} Alexandra Stoica</p>
+                  <p>&copy;{new Date().getFullYear()} Alexandra Stoica</p>
                 </div>
                 <Logo />
               </div>

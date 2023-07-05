@@ -15,7 +15,7 @@ export default function Header({ sticky, title }: HeaderProps) {
   const [isAtTop, setIsAtTop] = useState(true);
 
   const [{ height }, heightApi] = useSpring(() => ({
-    height: '120px',
+    height: '64px',
     config: config.gentle,
   }));
 
@@ -23,7 +23,7 @@ export default function Header({ sticky, title }: HeaderProps) {
     const scrollPosition = window.scrollY;
     if (scrollPosition < 200) {
       setIsAtTop(true);
-      heightApi.start({ height: '120px' });
+      heightApi.start({ height: '64px' });
     } else {
       setIsAtTop(false);
       heightApi.start({ height: '60px' });

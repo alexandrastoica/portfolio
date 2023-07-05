@@ -2,7 +2,6 @@
 @import './theme.scss';
 @import './variables.scss';
 @import './typography.scss';
-@import './spacing.scss';
 
 @import './article.scss';
 
@@ -32,13 +31,13 @@
 .wave-bg {
   position: absolute;
   width: 100%;
-  top: 60vh;
+  top: 40vh;
 }
 
 .wave-bg-color {
   background: linear-gradient(
     180deg,
-    transparent calc(60vh + 3rem),
+    transparent calc(40vh + 3rem),
     var(--color-wave) 0
   );
 }
@@ -108,11 +107,34 @@ hr {
 .card__layout {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 32px 16px;
+  gap: var(--sp-xs);
+  padding: 0;
+
+  li {
+    transition: opacity 200ms ease;
+  }
+
+  &:hover li,
+  &:focus-within li {
+    filter: blur(1px);
+    opacity: 0.5;
+  }
+
+  & li:hover,
+  & li:focus-within {
+    filter: none;
+    opacity: 1;
+  }
 }
 
-section,
-.section {
+.social__layout {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: var(--sp-xs);
+}
+
+main {
   position: relative;
   max-width: var(--max-layout-width);
   padding-block: 4em 2em;
@@ -121,8 +143,10 @@ section,
   width: 100%;
 }
 
-main {
-  @extend .section;
+section,
+.section {
+  @extend main;
+  padding-inline: 0;
 }
 
 .footer {
@@ -134,7 +158,7 @@ main {
   &__wrapper {
     display: grid;
     align-items: stretch;
-    grid-template-columns: 1fr minmax(auto, 880px) 1fr;
+    grid-template-columns: 1fr minmax(auto, var(--max-layout-width)) 1fr;
     column-gap: 16px;
   }
 
@@ -144,16 +168,4 @@ main {
     align-items: center;
     grid-column: 2 / auto;
   }
-}
-
-.contact__animation {
-  position: relative;
-  width: 200px;
-  transform: translateX(50%);
-}
-
-.contact__email {
-  position: absolute;
-  top: 100px;
-  left: 200px;
 }

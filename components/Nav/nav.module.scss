@@ -1,14 +1,5 @@
 .nav {
-  --nav-height: 48px;
-  --nav-gradient: linear-gradient(
-    90deg,
-    transparent 0%,
-    hsl(0deg 0% 72%) 31%,
-    hsl(0deg 0% 44%) 66%,
-    hsl(0deg, 0%, 44%) 83%,
-    hsl(0deg 0% 72%) 94%,
-    transparent 100%
-  );
+  --nav-height: 32px;
 
   position: sticky;
   top: var(--sp-m);
@@ -21,15 +12,14 @@
   color: var(--text1);
   background-color: var(--surface1);
 
-  box-shadow: 0 10px 30px hsl(var(--surface-shadow) / var(--shadow-strength));
+  box-shadow: var(--box-shadow);
   border: 1px solid var(--surface2);
-  backdrop-filter: blur(20px) saturate(200%) brightness(100%);
   z-index: 3;
 
   &::before {
     content: '';
     position: absolute;
-    background-image: var(--nav-gradient);
+    background-image: var(--border);
     opacity: 0.3;
     height: 1px;
     top: -1px;
@@ -56,9 +46,8 @@
     position: relative;
     display: block;
     font-size: 14px;
-    font-weight: 500;
     text-transform: capitalize;
-    padding-inline: var(--sp-xs);
+    padding-inline: 12px;
     text-decoration: none;
     line-height: calc(var(--nav-height) - 8px);
     cursor: pointer;
@@ -90,7 +79,7 @@
       position: absolute;
       height: 0.5px;
       width: calc(100% - 24px);
-      background-image: var(--nav-gradient);
+      background-image: var(--border);
       bottom: -5px;
       left: 16px;
     }

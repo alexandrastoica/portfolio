@@ -1,11 +1,18 @@
 import Header from '@/components/Header/header';
 import HeroAnimation from '@/components/HeroAnimation/heroAnimation';
+import IconButton from '@/components/IconButton/iconButton';
 import { ListItem } from '@/components/ListItem/listItem';
-import LottieArrow from '@/components/Lottie/lottie';
 import Nav from '@/components/Nav/nav';
 import { getAllFilesInCollection } from '@/lib/api';
-// import { Frontmatter } from '@/lib/types';
+import {
+  FileTextIcon,
+  GitHubLogoIcon,
+  LinkedInLogoIcon,
+  TwitterLogoIcon,
+} from '@radix-ui/react-icons';
 import { CSSProperties } from 'react';
+// import { Frontmatter } from '@/lib/types';
+// import { CSSProperties } from 'react';
 
 export default async function Home() {
   let research = await getAllFilesInCollection('research');
@@ -17,8 +24,6 @@ export default async function Home() {
         <div className="wave-bg">
           <svg
             className="wave"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox="0 24 150 28"
             preserveAspectRatio="none"
           >
@@ -63,124 +68,6 @@ export default async function Home() {
           </div>
           <Nav />
 
-          <section id="projects" data-nav="projects">
-            <div className="heading">
-              <span
-                aria-hidden="true"
-                className="line"
-                style={
-                  {
-                    top: '-32px',
-                    left: '-32px',
-                    '--color': 'var(--mint)',
-                  } as CSSProperties
-                }
-              ></span>
-              <span
-                aria-hidden="true"
-                className="line"
-                style={
-                  {
-                    top: '-48px',
-                    left: '-48px',
-                    '--color': 'var(--pink)',
-                  } as CSSProperties
-                }
-              ></span>
-              <h2>Projects</h2>
-              <p>A collection of case studies.</p>
-              <span
-                aria-hidden="true"
-                className="line"
-                data-orientation="horizontal"
-                style={
-                  {
-                    bottom: '-32px',
-                    left: '-88px',
-                    '--color': 'var(--pink)',
-                  } as CSSProperties
-                }
-              ></span>
-            </div>
-            <ul>
-              {projects.map((article, i) => (
-                <ListItem
-                  key={i}
-                  article={article}
-                  link={`/projects/${article.slug}`}
-                  cta="See more"
-                ></ListItem>
-              ))}
-            </ul>
-          </section>
-
-          <section id="research" data-nav="research">
-            <div className="heading">
-              <span
-                aria-hidden="true"
-                className="line"
-                style={
-                  {
-                    top: '-32px',
-                    left: '-32px',
-                    '--color': 'var(--pink)',
-                  } as CSSProperties
-                }
-              ></span>
-              <span
-                aria-hidden="true"
-                className="line"
-                style={
-                  {
-                    top: '-48px',
-                    left: '-48px',
-                    '--color': 'var(--mint)',
-                  } as CSSProperties
-                }
-              ></span>
-              <h2>Research</h2>
-              <p>
-                A collection of the research I conducted as part of my MSc
-                Human-Computer Interaction studies.
-              </p>
-              <span
-                aria-hidden="true"
-                className="line"
-                data-orientation="horizontal"
-                style={
-                  {
-                    bottom: '-32px',
-                    left: '-88px',
-                    '--color': 'var(--mint)',
-                  } as CSSProperties
-                }
-              ></span>
-            </div>
-            <ul>
-              {/* <ListItem
-                article={
-                  {
-                    label: 'MSc Thesis',
-                    year: 2018,
-                    title:
-                      '"Keep Going!": Understanding the Implications of Coaching through Fitness Apps to Support Physical Training',
-                  } as Frontmatter
-                }
-                target="_blank"
-                link="https://uclic.ucl.ac.uk/content/2-study/4-current-taught-course/1-distinction-projects/12-18/stoica_ralucaalexandra_2018.pdf"
-                cta="See more"
-              ></ListItem> */}
-              {research.map((article, i) => (
-                <ListItem
-                  key={i}
-                  article={article}
-                  link={`/research/${article.slug}`}
-                  cta="See more"
-                ></ListItem>
-              ))}
-            </ul>
-          </section>
-
           <section id="about" data-nav="about">
             <div className="heading">
               <span
@@ -190,6 +77,7 @@ export default async function Home() {
                   {
                     top: '-48px',
                     left: '-24px',
+                    height: '60px',
                     '--color': 'var(--mint)',
                   } as CSSProperties
                 }
@@ -220,20 +108,155 @@ export default async function Home() {
                 }
               ></span>
             </div>
-            <p>TODO</p>
+            <p>Todo</p>
+            <br></br>
+            <ul className="social__layout">
+              <li>
+                <IconButton
+                  icon={<LinkedInLogoIcon />}
+                  tooltip="LinkedIn"
+                  href="#"
+                />
+              </li>
+              <li>
+                <IconButton
+                  icon={<GitHubLogoIcon />}
+                  tooltip="GitHub"
+                  href="#"
+                />
+              </li>
+              <li>
+                <IconButton icon={<FileTextIcon />} tooltip="CV" href="#" />
+              </li>
+              <li>
+                <IconButton
+                  icon={<TwitterLogoIcon />}
+                  tooltip="Twitter"
+                  href="#"
+                />
+              </li>
+            </ul>
           </section>
 
-          <section id="contact" data-nav="contact">
+          <section id="projects" data-nav="projects">
             <div className="heading">
-              <h2>TODO</h2>
+              {/* <span
+                aria-hidden="true"
+                className="line"
+                style={
+                  {
+                    top: '-32px',
+                    left: '-32px',
+                    '--color': 'var(--mint)',
+                  } as CSSProperties
+                }
+              ></span>
+              <span
+                aria-hidden="true"
+                className="line"
+                style={
+                  {
+                    top: '-48px',
+                    left: '-48px',
+                    '--color': 'var(--pink)',
+                  } as CSSProperties
+                }
+              ></span> */}
+              <h2>Projects</h2>
+              {/* <span
+                aria-hidden="true"
+                className="line"
+                data-orientation="horizontal"
+                style={
+                  {
+                    bottom: '-10px',
+                    left: '-88px',
+                    '--color': 'var(--pink)',
+                  } as CSSProperties
+                }
+              ></span> */}
             </div>
-            <div className="contact__animation">
-              <LottieArrow />
-              <div className="contact__email">
-                <p className="h3">ralexandrastoica@gmail.com</p>
-              </div>
-            </div>
+            <ul className="card__layout">
+              {projects.map((article, i) => (
+                <ListItem
+                  key={i}
+                  article={article}
+                  link={`/projects/${article.slug}`}
+                  cta="See more"
+                ></ListItem>
+              ))}
+            </ul>
           </section>
+
+          <section id="research" data-nav="research">
+            <div className="heading">
+              {/* <span
+                aria-hidden="true"
+                className="line"
+                style={
+                  {
+                    top: '-32px',
+                    left: '-32px',
+                    '--color': 'var(--pink)',
+                  } as CSSProperties
+                }
+              ></span>
+              <span
+                aria-hidden="true"
+                className="line"
+                style={
+                  {
+                    top: '-48px',
+                    left: '-48px',
+                    '--color': 'var(--mint)',
+                  } as CSSProperties
+                }
+              ></span> */}
+              <h2>Research</h2>
+              {/* <span
+                aria-hidden="true"
+                className="line"
+                data-orientation="horizontal"
+                style={
+                  {
+                    bottom: '-10px',
+                    left: '-88px',
+                    '--color': 'var(--mint)',
+                  } as CSSProperties
+                }
+              ></span> */}
+            </div>
+            <ul className="card__layout">
+              {/* <ListItem
+                article={
+                  {
+                    label: 'MSc Thesis',
+                    year: 2018,
+                    title:
+                      '"Keep Going!": Understanding the Implications of Coaching through Fitness Apps to Support Physical Training',
+                  } as Frontmatter
+                }
+                target="_blank"
+                link="https://uclic.ucl.ac.uk/content/2-study/4-current-taught-course/1-distinction-projects/12-18/stoica_ralucaalexandra_2018.pdf"
+                cta="See more"
+              ></ListItem> */}
+              {research.map((article, i) => (
+                <ListItem
+                  key={i}
+                  article={article}
+                  link={`/research/${article.slug}`}
+                  cta="See more"
+                ></ListItem>
+              ))}
+            </ul>
+          </section>
+
+          {/* <section id="contact" data-nav="contact">
+            <div className="heading">
+              <h2>Connect</h2>
+            </div>
+            
+          </section> */}
         </main>
       </div>
     </>

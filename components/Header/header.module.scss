@@ -4,7 +4,7 @@
   justify-content: center;
 
   &__content {
-    width: 880px;
+    width: var(--max-layout-width);
     display: flex;
     justify-content: space-between;
     align-items: center;
