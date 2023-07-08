@@ -20,9 +20,7 @@ function setInitialColorMode() {
     return 'light';
   }
   const colorMode = getInitialColorMode();
-  if (colorMode === 'dark') {
-    document.documentElement.setAttribute('data-theme', colorMode);
-  }
+  document.documentElement.setAttribute('data-theme', colorMode);
 }
 
 export const blockingSetInitialColorMode = `(function() {

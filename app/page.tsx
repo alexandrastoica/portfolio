@@ -55,7 +55,7 @@ export default async function Home() {
           <div className="header__content">
             <div className="header__text">
               <h1>
-                Hi there! I'm Alexandra, a{' '}
+                Hi there! I&apos;m Alexandra, a{' '}
                 <span className="stroke">frontend</span> and<br></br>
                 <span className="box">UX</span> engineer.
               </h1>

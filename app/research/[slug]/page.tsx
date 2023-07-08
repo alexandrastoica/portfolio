@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { getCollectionFileBySlug } from '@/lib/api';
 import { Collection } from '@/lib/types';
 import { Metadata } from 'next/types';
-import { ArrowLeftIcon, FileTextIcon } from '@radix-ui/react-icons';
+import { ArrowLeftIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
 import Header from '@/components/Header/header';
 

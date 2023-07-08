@@ -21,11 +21,11 @@
     "fs": "^0.0.1-security",
     "install": "^0.13.0",
     "lottie-react": "^2.4.0",
-    "next": "13.2.1",
+    "next": "^13.4.9",
     "next-mdx-remote": "^4.3.0",
     "npm": "^9.5.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "typescript": "4.9.5"
   },
   "devDependencies": {
