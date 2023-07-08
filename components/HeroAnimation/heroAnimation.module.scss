@@ -4,6 +4,7 @@
   height: 100%;
   width: 200px;
   transform: translateY(calc(100% - 80px));
+  user-select: none;
 }
 
 .img {
@@ -12,7 +13,7 @@
   height: var(--avatar-size);
   padding: var(--sp-xxs);
   border-radius: 100px;
-  box-shadow: 0 10px 30px hsl(var(--surface-shadow) / var(--shadow-strength));
+  box-shadow: var(--box-shadow);
 }
 
 .msgbubble {

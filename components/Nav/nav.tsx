@@ -33,17 +33,15 @@ export default function Nav() {
         <ul className={styles.link__list}>
           {links.map((link, i) => (
             <li key={i}>
-              <a
-                href={`#${link}`}
-                className={`${styles.link} ${
-                  active?.toLowerCase() == link.toLowerCase()
-                    ? styles.active
-                    : ''
-                }`}
+              <button
+                className={`${styles.link} ${active?.toLowerCase() == link.toLowerCase()
+                  ? styles.active
+                  : ''
+                  }`}
                 onClick={() => jumpToSection(link)}
               >
                 {link}
-              </a>
+              </button>
             </li>
           ))}
         </ul>

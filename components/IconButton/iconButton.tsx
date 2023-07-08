@@ -4,17 +4,26 @@ import styles from './iconButton.module.scss';
 
 type IconButtonProps = {
   icon?: ReactNode;
-  href: string;
   tooltip: string;
+  href?: string;
+  target?: '_blank';
+  onClickHandler?: () => void;
 };
 
-export default function IconButton({ icon, href, tooltip }: IconButtonProps) {
-  return (
-    <a href={href} className={styles.button}>
+export default function IconButton({ icon, href, tooltip, target, onClickHandler }: IconButtonProps) {
+  return (href ?
+    <a href={href}
+      {...(target && { target, rel: 'noreferrer' })}
+      className={styles.button}>
       {icon}
       <div className={styles.tooltip}>
         <p>{tooltip}</p>
       </div>
-    </a>
+    </a> : <button className={styles.button} {...(onClickHandler && { onClick: () => onClickHandler() })} >
+      {icon}
+      < div className={styles.tooltip}>
+        <p>{tooltip}</p>
+      </div>
+    </button >
   );
 }

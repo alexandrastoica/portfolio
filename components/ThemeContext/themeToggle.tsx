@@ -1,20 +1,16 @@
 'use client';
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 import { useContext } from 'react';
+import IconButton from '../IconButton/iconButton';
 
 import { ThemeContext } from './themeContext';
 
 const ThemeToggle = () => {
   let { theme, toggleTheme } = useContext(ThemeContext);
+  let helpText = theme == 'light' ? 'Dark mode' : 'Light mode';
 
   return (
-    <button
-      aria-label="Toggle dark mode"
-      style={{ color: 'var(--text1)', zIndex: 4, position: 'relative' }}
-      onClick={() => toggleTheme()}
-    >
-      {theme == 'light' ? <SunIcon /> : <MoonIcon />}
-    </button>
+    <IconButton icon={theme == 'light' ? <SunIcon /> : <MoonIcon />} tooltip={helpText} onClickHandler={toggleTheme} />
   );
 };
 

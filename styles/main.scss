@@ -6,8 +6,8 @@
 @import './article.scss';
 
 ::selection {
-  color: var(--surface1);
-  background: var(--text2);
+  color: var(--highlight-text);
+  background: hsl(var(--highlight));
 }
 
 .header__content {
@@ -15,6 +15,10 @@
   display: flex;
   justify-content: center;
   padding-block-end: var(--sp-m);
+
+  h1 {
+    margin: 0;
+  }
 }
 
 .header__text {
@@ -35,11 +39,9 @@
 }
 
 .wave-bg-color {
-  background: linear-gradient(
-    180deg,
-    transparent calc(40vh + 3rem),
-    var(--color-wave) 0
-  );
+  background: linear-gradient(180deg,
+      transparent calc(40vh + 3rem),
+      var(--color-wave) 0);
 }
 
 .wave {
@@ -138,7 +140,7 @@ main {
   position: relative;
   max-width: var(--max-layout-width);
   padding-block: 4em 2em;
-  padding-inline: 1em;
+  padding-inline: var(--sp-s);
   margin-inline: auto;
   width: 100%;
 }
@@ -167,5 +169,11 @@ section,
     justify-content: space-between;
     align-items: center;
     grid-column: 2 / auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .header__animation {
+    display: none;
   }
 }

@@ -11,8 +11,6 @@ import {
   TwitterLogoIcon,
 } from '@radix-ui/react-icons';
 import { CSSProperties } from 'react';
-// import { Frontmatter } from '@/lib/types';
-// import { CSSProperties } from 'react';
 
 export default async function Home() {
   let research = await getAllFilesInCollection('research');
@@ -57,7 +55,7 @@ export default async function Home() {
           <div className="header__content">
             <div className="header__text">
               <h1>
-                Hi there! I&apos;m Alexandra, a{' '}
+                Hi there! I'm Alexandra, a{' '}
                 <span className="stroke">frontend</span> and<br></br>
                 <span className="box">UX</span> engineer.
               </h1>
@@ -77,8 +75,8 @@ export default async function Home() {
                   {
                     top: '-48px',
                     left: '-24px',
-                    height: '60px',
-                    '--color': 'var(--mint)',
+                    height: '200px',
+                    '--color': 'hsl(var(--mint) / 40%)',
                   } as CSSProperties
                 }
               ></span>
@@ -91,7 +89,7 @@ export default async function Home() {
                   {
                     bottom: '0',
                     left: '-88px',
-                    '--color': 'var(--pink)',
+                    '--color': 'hsl(var(--pink) / 20%)',
                   } as CSSProperties
                 }
               ></span>
@@ -103,36 +101,47 @@ export default async function Home() {
                   {
                     bottom: '-10px',
                     left: '-88px',
-                    '--color': 'var(--mint)',
+                    '--color': 'hsl(var(--mint) / 40%)',
                   } as CSSProperties
                 }
               ></span>
             </div>
-            <p>Todo</p>
+            <p>I am passionate about crafting purposeful products. </p>
+            <br></br>
+            <p><i>Innovation happens at the intersection of multiple disciplines.</i> With a background in Engineering and Human-Computer Interaction, I combine expertise in design systems, rapid prototyping, and user-centred design to create accessible, reliable, and delightful user experiences. </p>
+            <br></br>
+            <p>Previously, I worked with clients such as Google, Android Developers, Area 120, and Protocol Labs.</p>
             <br></br>
             <ul className="social__layout">
               <li>
                 <IconButton
                   icon={<LinkedInLogoIcon />}
                   tooltip="LinkedIn"
-                  href="#"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/alexandrastoica"
                 />
               </li>
               <li>
                 <IconButton
                   icon={<GitHubLogoIcon />}
                   tooltip="GitHub"
-                  href="#"
+                  target="_blank"
+                  href="https://github.com/alexandrastoica"
                 />
               </li>
               <li>
-                <IconButton icon={<FileTextIcon />} tooltip="CV" href="#" />
+                <IconButton
+                  icon={<FileTextIcon />}
+                  tooltip="CV"
+                  href="https://read.cv/alexandrastoica"
+                  target="_blank" />
               </li>
               <li>
                 <IconButton
                   icon={<TwitterLogoIcon />}
                   tooltip="Twitter"
-                  href="#"
+                  target="_blank"
+                  href="https://twitter.com/alexandrasto_"
                 />
               </li>
             </ul>
@@ -140,14 +149,15 @@ export default async function Home() {
 
           <section id="projects" data-nav="projects">
             <div className="heading">
-              {/* <span
+              <span
                 aria-hidden="true"
                 className="line"
+                data-orientation="horizontal"
                 style={
                   {
-                    top: '-32px',
-                    left: '-32px',
-                    '--color': 'var(--mint)',
+                    bottom: '0',
+                    left: '-88px',
+                    '--color': 'hsl(var(--pink) / 20%)',
                   } as CSSProperties
                 }
               ></span>
@@ -157,13 +167,14 @@ export default async function Home() {
                 style={
                   {
                     top: '-48px',
-                    left: '-48px',
-                    '--color': 'var(--pink)',
+                    left: '-24px',
+                    height: '200px',
+                    '--color': 'hsl(var(--mint) / 40%)',
                   } as CSSProperties
                 }
-              ></span> */}
+              ></span>
               <h2>Projects</h2>
-              {/* <span
+              <span
                 aria-hidden="true"
                 className="line"
                 data-orientation="horizontal"
@@ -171,10 +182,10 @@ export default async function Home() {
                   {
                     bottom: '-10px',
                     left: '-88px',
-                    '--color': 'var(--pink)',
+                    '--color': 'hsl(var(--pink) / 30%)',
                   } as CSSProperties
                 }
-              ></span> */}
+              ></span>
             </div>
             <ul className="card__layout">
               {projects.map((article, i) => (
@@ -190,14 +201,15 @@ export default async function Home() {
 
           <section id="research" data-nav="research">
             <div className="heading">
-              {/* <span
+              <span
                 aria-hidden="true"
                 className="line"
                 style={
                   {
                     top: '-32px',
                     left: '-32px',
-                    '--color': 'var(--pink)',
+                    height: '200px',
+                    '--color': 'hsl(var(--pink) / 30%)',
                   } as CSSProperties
                 }
               ></span>
@@ -208,12 +220,13 @@ export default async function Home() {
                   {
                     top: '-48px',
                     left: '-48px',
-                    '--color': 'var(--mint)',
+                    height: '200px',
+                    '--color': 'hsl(var(--mint) / 30%)',
                   } as CSSProperties
                 }
-              ></span> */}
+              ></span>
               <h2>Research</h2>
-              {/* <span
+              <span
                 aria-hidden="true"
                 className="line"
                 data-orientation="horizontal"
@@ -221,10 +234,10 @@ export default async function Home() {
                   {
                     bottom: '-10px',
                     left: '-88px',
-                    '--color': 'var(--mint)',
+                    '--color': 'hsl(var(--mint) / 30%)',
                   } as CSSProperties
                 }
-              ></span> */}
+              ></span>
             </div>
             <ul className="card__layout">
               {/* <ListItem

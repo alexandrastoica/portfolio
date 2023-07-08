@@ -4,8 +4,8 @@
   --brand-saturation: 100%;
   --brand-lightness: 60%;
 
-  --mint: 165 60.6% 84.5%;
-  --pink: 323 72.2% 91.1%;
+  --mint: 170 70% 60%;
+  --pink: 330 70% 60%;
   --gray1: #fcfcfc;
   --gray2: #f8f8f8;
   --gray3: #f3f3f3;
@@ -19,21 +19,17 @@
   --gray11: #6f6f6f;
   --gray12: #171717;
 
-  --box-shadow: 0 10px 20px hsl(var(--highlight) / 0.2);
-  --border: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--surface2) 31%,
-    var(--surface4) 66%,
-    var(--surface4) 83%,
-    var(--surface2) 94%,
-    transparent 100%
-  );
+  --box-shadow: 0 10px 20px hsl(var(--highlight) / 15%);
+  --border: linear-gradient(90deg,
+      transparent 0%,
+      var(--surface2) 31%,
+      var(--surface4) 66%,
+      var(--surface4) 83%,
+      var(--surface2) 94%,
+      transparent 100%);
 
   /* light */
-  --brand-light: hsl(
-    var(--brand-hue) var(--brand-saturation) var(--brand-lightness)
-  );
+  --brand-light: hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));
   --text1-light: hsl(var(--brand-hue) var(--brand-saturation) 10%);
   --text2-light: hsl(var(--brand-hue) 30% 30%);
   --surface0-light: white;
@@ -45,10 +41,7 @@
   --shadow-strength-light: 0.2;
 
   /* dark */
-  --brand-dark: hsl(
-    var(--brand-hue) calc(var(--brand-saturation) / 1.25)
-      calc(var(--brand-lightness) * 1.25)
-  );
+  --brand-dark: hsl(var(--brand-hue) calc(var(--brand-saturation) / 1.25) calc(var(--brand-lightness) * 1.25));
   --text1-dark: hsl(var(--brand-hue) 15% 85%);
   --text2-dark: hsl(var(--brand-hue) 5% 65%);
   --surface0-dark: black;
@@ -82,6 +75,7 @@
     --surface-shadow: var(--surface-shadow-dark);
     --shadow-strength: var(--shadow-strength-dark);
     --highlight: var(--pink);
+    --highlight-text: var(--surface4);
   }
 }
 
@@ -101,6 +95,7 @@ html[data-theme='light'],
   --surface-shadow: var(--surface-shadow-light);
   --shadow-strength: var(--shadow-strength-light);
   --highlight: var(--mint);
+  --highlight-text: var(--text1);
 }
 
 html[data-theme='dark'],
@@ -118,4 +113,5 @@ html[data-theme='dark'],
   --surface-shadow: var(--surface-shadow-dark);
   --shadow-strength: var(--shadow-strength-dark);
   --highlight: var(--pink);
+  --highlight-text: var(--surface4);
 }
