@@ -35,17 +35,12 @@ export default async function BlogPage({ params }: BlogPageProps) {
   return (
     <>
       <Header sticky title={frontmatter.title} />
-      <article className="article__wrapper flow">
+      <article className="article__wrapper">
         <div className="article__toolbar">
           <div className="article__back">
             <Link href="/">
               <ArrowLeftIcon /> Back
             </Link>
-          </div>
-          <div className="article__links">
-            <a href={frontmatter.links[0]}>
-              <FileTextIcon />
-            </a>
           </div>
         </div>
         <h1>{frontmatter.title}</h1>
@@ -58,35 +53,5 @@ export default async function BlogPage({ params }: BlogPageProps) {
         <MDXContent source={serialized} />
       </article>
     </>
-    // <>
-    //   <section className="article__header">
-    //     <div className="article__back">
-    //       <Link href="/">
-    //         <ArrowLeftIcon />
-    //         Back
-    //       </Link>
-    //     </div>
-    //     <div className="article__toolbar">
-    //       <ThemeToggle />
-    //       <a href={frontmatter.links[0]}>
-    //         <FileTextIcon />
-    //       </a>
-    //     </div>
-    //     <p>
-    //       {frontmatter.label} | {frontmatter.date}
-    //     </p>
-    //     <h1>{frontmatter.title}</h1>
-    //     <p className="lede">{frontmatter.description}</p>
-    //     <ul className="article__tags">
-    //       {frontmatter.keywords.map((tag, i) => (
-    //         <li key={`tag-${i}`}>{tag}</li>
-    //       ))}
-    //     </ul>
-    //   </section>
-
-    //   <article className="article__wrapper flow">
-    //     <MDXContent source={serialized} />
-    //   </article>
-    // </>
   );
 }

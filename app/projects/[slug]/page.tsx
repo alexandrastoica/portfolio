@@ -5,7 +5,7 @@ import { getCollectionFileBySlug } from '@/lib/api';
 import { Collection } from '@/lib/types';
 import Header from '@/components/Header/header';
 import Link from 'next/link';
-import { ArrowLeftIcon } from '@radix-ui/react-icons';
+import { ResetIcon } from '@radix-ui/react-icons';
 
 const COLLECTION: Collection = 'projects';
 
@@ -38,7 +38,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
       <article className="article__wrapper">
         <div className="article__back">
           <Link href="/">
-            <ArrowLeftIcon /> Back
+            <ResetIcon /> Back
           </Link>
         </div>
         <h1>{frontmatter.title}</h1>

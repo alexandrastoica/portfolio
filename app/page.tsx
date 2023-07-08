@@ -1,10 +1,15 @@
 import Header from '@/components/Header/header';
 import HeroAnimation from '@/components/HeroAnimation/heroAnimation';
+import IconButton from '@/components/IconButton/iconButton';
 import { ListItem } from '@/components/ListItem/listItem';
-import LottieArrow from '@/components/Lottie/lottie';
 import Nav from '@/components/Nav/nav';
 import { getAllFilesInCollection } from '@/lib/api';
-// import { Frontmatter } from '@/lib/types';
+import {
+  FileTextIcon,
+  GitHubLogoIcon,
+  LinkedInLogoIcon,
+  TwitterLogoIcon,
+} from '@radix-ui/react-icons';
 import { CSSProperties } from 'react';
 
 export default async function Home() {
@@ -17,8 +22,6 @@ export default async function Home() {
         <div className="wave-bg">
           <svg
             className="wave"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox="0 24 150 28"
             preserveAspectRatio="none"
           >
@@ -52,7 +55,7 @@ export default async function Home() {
           <div className="header__content">
             <div className="header__text">
               <h1>
-                Hi there! I&apos;m Alexandra, a{' '}
+                Hi there! I'm Alexandra, a{' '}
                 <span className="stroke">frontend</span> and<br></br>
                 <span className="box">UX</span> engineer.
               </h1>
@@ -63,16 +66,98 @@ export default async function Home() {
           </div>
           <Nav />
 
-          <section id="projects" data-nav="projects">
+          <section id="about" data-nav="about">
             <div className="heading">
               <span
                 aria-hidden="true"
                 className="line"
                 style={
                   {
-                    top: '-32px',
-                    left: '-32px',
-                    '--color': 'var(--mint)',
+                    top: '-48px',
+                    left: '-24px',
+                    height: '200px',
+                    '--color': 'hsl(var(--mint) / 40%)',
+                  } as CSSProperties
+                }
+              ></span>
+              <h2>About me</h2>
+              <span
+                aria-hidden="true"
+                className="line"
+                data-orientation="horizontal"
+                style={
+                  {
+                    bottom: '0',
+                    left: '-88px',
+                    '--color': 'hsl(var(--pink) / 20%)',
+                  } as CSSProperties
+                }
+              ></span>
+              <span
+                aria-hidden="true"
+                className="line"
+                data-orientation="horizontal"
+                style={
+                  {
+                    bottom: '-10px',
+                    left: '-88px',
+                    '--color': 'hsl(var(--mint) / 40%)',
+                  } as CSSProperties
+                }
+              ></span>
+            </div>
+            <p>I am passionate about crafting purposeful products. </p>
+            <br></br>
+            <p><i>Innovation happens at the intersection of multiple disciplines.</i> With a background in Engineering and Human-Computer Interaction, I combine expertise in design systems, rapid prototyping, and user-centred design to create accessible, reliable, and delightful user experiences. </p>
+            <br></br>
+            <p>Previously, I worked with clients such as Google, Android Developers, Area 120, and Protocol Labs.</p>
+            <br></br>
+            <ul className="social__layout">
+              <li>
+                <IconButton
+                  icon={<LinkedInLogoIcon />}
+                  tooltip="LinkedIn"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/alexandrastoica"
+                />
+              </li>
+              <li>
+                <IconButton
+                  icon={<GitHubLogoIcon />}
+                  tooltip="GitHub"
+                  target="_blank"
+                  href="https://github.com/alexandrastoica"
+                />
+              </li>
+              <li>
+                <IconButton
+                  icon={<FileTextIcon />}
+                  tooltip="CV"
+                  href="https://read.cv/alexandrastoica"
+                  target="_blank" />
+              </li>
+              <li>
+                <IconButton
+                  icon={<TwitterLogoIcon />}
+                  tooltip="Twitter"
+                  target="_blank"
+                  href="https://twitter.com/alexandrasto_"
+                />
+              </li>
+            </ul>
+          </section>
+
+          <section id="projects" data-nav="projects">
+            <div className="heading">
+              <span
+                aria-hidden="true"
+                className="line"
+                data-orientation="horizontal"
+                style={
+                  {
+                    bottom: '0',
+                    left: '-88px',
+                    '--color': 'hsl(var(--pink) / 20%)',
                   } as CSSProperties
                 }
               ></span>
@@ -82,27 +167,27 @@ export default async function Home() {
                 style={
                   {
                     top: '-48px',
-                    left: '-48px',
-                    '--color': 'var(--pink)',
+                    left: '-24px',
+                    height: '200px',
+                    '--color': 'hsl(var(--mint) / 40%)',
                   } as CSSProperties
                 }
               ></span>
               <h2>Projects</h2>
-              <p>A collection of case studies.</p>
               <span
                 aria-hidden="true"
                 className="line"
                 data-orientation="horizontal"
                 style={
                   {
-                    bottom: '-32px',
+                    bottom: '-10px',
                     left: '-88px',
-                    '--color': 'var(--pink)',
+                    '--color': 'hsl(var(--pink) / 30%)',
                   } as CSSProperties
                 }
               ></span>
             </div>
-            <ul>
+            <ul className="card__layout">
               {projects.map((article, i) => (
                 <ListItem
                   key={i}
@@ -123,7 +208,8 @@ export default async function Home() {
                   {
                     top: '-32px',
                     left: '-32px',
-                    '--color': 'var(--pink)',
+                    height: '200px',
+                    '--color': 'hsl(var(--pink) / 30%)',
                   } as CSSProperties
                 }
               ></span>
@@ -134,29 +220,26 @@ export default async function Home() {
                   {
                     top: '-48px',
                     left: '-48px',
-                    '--color': 'var(--mint)',
+                    height: '200px',
+                    '--color': 'hsl(var(--mint) / 30%)',
                   } as CSSProperties
                 }
               ></span>
               <h2>Research</h2>
-              <p>
-                A collection of the research I conducted as part of my MSc
-                Human-Computer Interaction studies.
-              </p>
               <span
                 aria-hidden="true"
                 className="line"
                 data-orientation="horizontal"
                 style={
                   {
-                    bottom: '-32px',
+                    bottom: '-10px',
                     left: '-88px',
-                    '--color': 'var(--mint)',
+                    '--color': 'hsl(var(--mint) / 30%)',
                   } as CSSProperties
                 }
               ></span>
             </div>
-            <ul>
+            <ul className="card__layout">
               {/* <ListItem
                 article={
                   {
@@ -181,59 +264,12 @@ export default async function Home() {
             </ul>
           </section>
 
-          <section id="about" data-nav="about">
+          {/* <section id="contact" data-nav="contact">
             <div className="heading">
-              <span
-                aria-hidden="true"
-                className="line"
-                style={
-                  {
-                    top: '-48px',
-                    left: '-24px',
-                    '--color': 'var(--mint)',
-                  } as CSSProperties
-                }
-              ></span>
-              <h2>About me</h2>
-              <span
-                aria-hidden="true"
-                className="line"
-                data-orientation="horizontal"
-                style={
-                  {
-                    bottom: '0',
-                    left: '-88px',
-                    '--color': 'var(--pink)',
-                  } as CSSProperties
-                }
-              ></span>
-              <span
-                aria-hidden="true"
-                className="line"
-                data-orientation="horizontal"
-                style={
-                  {
-                    bottom: '-10px',
-                    left: '-88px',
-                    '--color': 'var(--mint)',
-                  } as CSSProperties
-                }
-              ></span>
+              <h2>Connect</h2>
             </div>
-            <p>TODO</p>
-          </section>
-
-          <section id="contact" data-nav="contact">
-            <div className="heading">
-              <h2>TODO</h2>
-            </div>
-            <div className="contact__animation">
-              <LottieArrow />
-              <div className="contact__email">
-                <p className="h3">ralexandrastoica@gmail.com</p>
-              </div>
-            </div>
-          </section>
+            
+          </section> */}
         </main>
       </div>
     </>

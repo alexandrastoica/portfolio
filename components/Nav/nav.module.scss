@@ -1,14 +1,5 @@
 .nav {
-  --nav-height: 48px;
-  --nav-gradient: linear-gradient(
-    90deg,
-    transparent 0%,
-    hsl(0deg 0% 72%) 31%,
-    hsl(0deg 0% 44%) 66%,
-    hsl(0deg, 0%, 44%) 83%,
-    hsl(0deg 0% 72%) 94%,
-    transparent 100%
-  );
+  --nav-height: 32px;
 
   position: sticky;
   top: var(--sp-m);
@@ -18,18 +9,17 @@
   width: fit-content;
   border-radius: 999px;
 
-  color: var(--color-text);
-  background-color: var(--color-background);
+  color: var(--text1);
+  background-color: var(--surface1);
 
-  box-shadow: 0 5px 30px var(--color-gray-300);
-  border: 1px solid var(--color-gray-300);
-  backdrop-filter: blur(20px) saturate(200%) brightness(100%);
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--surface2);
   z-index: 3;
 
   &::before {
     content: '';
     position: absolute;
-    background-image: var(--nav-gradient);
+    background-image: var(--border);
     opacity: 0.3;
     height: 1px;
     top: -1px;
@@ -42,6 +32,8 @@
   }
 
   .link {
+    color: var(--text1);
+
     &__list {
       list-style: none;
       display: flex;
@@ -54,9 +46,8 @@
     position: relative;
     display: block;
     font-size: 14px;
-    font-weight: 500;
     text-transform: capitalize;
-    padding-inline: var(--sp-xs);
+    padding-inline: 12px;
     text-decoration: none;
     line-height: calc(var(--nav-height) - 8px);
     cursor: pointer;
@@ -69,14 +60,12 @@
   }
 
   .active {
-    color: var(--color-text);
-
     &::before {
       content: '';
       position: absolute;
       height: 100%;
       width: 100%;
-      background-color: var(--color-gray-300);
+      background-color: var(--surface4);
       opacity: 0.5;
       bottom: 0;
       left: 0;
@@ -86,11 +75,11 @@
 
     &::after {
       content: '';
-      opacity: 0.5;
+      opacity: 0.2;
       position: absolute;
       height: 0.5px;
-      width: calc(100% - 32px);
-      background-image: var(--nav-gradient);
+      width: calc(100% - 24px);
+      background-image: var(--border);
       bottom: -5px;
       left: 16px;
     }
