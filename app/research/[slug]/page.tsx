@@ -1,5 +1,4 @@
 import MDXContent from '@/components/MDXContent/mdxContent';
-import { notFound } from 'next/navigation';
 import { getCollectionFileBySlug } from '@/lib/api';
 import { Collection } from '@/lib/types';
 import { Metadata } from 'next/types';
@@ -28,8 +27,11 @@ export default async function BlogPage({ params }: BlogPageProps) {
     COLLECTION,
     params.slug
   );
+
   if (!serialized || !frontmatter) {
-    notFound();
+    return (
+      <p>Article not found</p>
+    )
   }
 
   return (
