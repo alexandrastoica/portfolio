@@ -10,20 +10,35 @@ type IconButtonProps = {
   onClickHandler?: () => void;
 };
 
-export default function IconButton({ icon, href, tooltip, target, onClickHandler }: IconButtonProps) {
-  return (href ?
-    <a href={href}
+export default function IconButton({
+  icon,
+  href,
+  tooltip,
+  target,
+  onClickHandler,
+}: IconButtonProps) {
+  return href ? (
+    <a
+      href={href}
       {...(target && { target, rel: 'noreferrer' })}
-      className={styles.button}>
+      className={styles.button}
+      aria-label={tooltip}
+    >
       {icon}
       <div className={styles.tooltip}>
         <p>{tooltip}</p>
       </div>
-    </a> : <button className={styles.button} {...(onClickHandler && { onClick: () => onClickHandler() })} >
+    </a>
+  ) : (
+    <button
+      className={styles.button}
+      aria-label={tooltip}
+      {...(onClickHandler && { onClick: () => onClickHandler() })}
+    >
       {icon}
-      < div className={styles.tooltip}>
+      <div className={styles.tooltip}>
         <p>{tooltip}</p>
       </div>
-    </button >
+    </button>
   );
 }

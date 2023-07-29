@@ -1,21 +1,17 @@
+import { allProjects, allResearch } from '@/.contentlayer/generated';
 import Header from '@/components/Header/header';
 import HeroAnimation from '@/components/HeroAnimation/heroAnimation';
 import IconButton from '@/components/IconButton/iconButton';
 import { ListItem } from '@/components/ListItem/listItem';
 import Nav from '@/components/Nav/nav';
-import { getAllFilesInCollection } from '@/lib/api';
 import {
   FileTextIcon,
   GitHubLogoIcon,
   LinkedInLogoIcon,
-  TwitterLogoIcon,
 } from '@radix-ui/react-icons';
 import { CSSProperties } from 'react';
 
-export default async function Home() {
-  let research = await getAllFilesInCollection('research');
-  let projects = await getAllFilesInCollection('projects');
-
+export default function Home() {
   return (
     <>
       <div className="wave-bg-color">
@@ -106,11 +102,32 @@ export default async function Home() {
                 }
               ></span>
             </div>
-            <p>I am passionate about crafting purposeful products. </p>
+            <p>
+              I am passionate about crafting purposeful products{' '}
+              <span aria-hidden>💡</span>
+            </p>
             <br></br>
-            <p><i>Innovation happens at the intersection of multiple disciplines.</i> With a background in Engineering and Human-Computer Interaction, I combine expertise in design systems, rapid prototyping, and user-centred design to create accessible, reliable, and delightful user experiences. </p>
+            <p>
+              With a background in Engineering and{' '}
+              <a
+                href="https://uclic.ucl.ac.uk/content/2-study/4-current-taught-course/1-distinction-projects/12-18/stoica_ralucaalexandra_2018.pdf"
+                target="_blank"
+              >
+                Human-Computer Interaction
+              </a>
+              , I combine expertise in design systems, product thinking, and
+              user-centred design to create accessible, reliable, and delightful
+              user experiences.{' '}
+            </p>
             <br></br>
-            <p>Previously, I worked with clients such as Google, Android Developers, Area 120, and Protocol Labs.</p>
+            <p>
+              Currently building{' '}
+              <a href="https://hicoral.com/" target="_blank">
+                Coral
+              </a>{' '}
+              <span aria-hidden>🪸</span>. Previously, I worked with clients
+              such as Google, Android Developers, Area 120, and Protocol Labs.
+            </p>
             <br></br>
             <ul className="social__layout">
               <li>
@@ -134,14 +151,7 @@ export default async function Home() {
                   icon={<FileTextIcon />}
                   tooltip="CV"
                   href="https://read.cv/alexandrastoica"
-                  target="_blank" />
-              </li>
-              <li>
-                <IconButton
-                  icon={<TwitterLogoIcon />}
-                  tooltip="Twitter"
                   target="_blank"
-                  href="https://twitter.com/alexandrasto_"
                 />
               </li>
             </ul>
@@ -188,13 +198,14 @@ export default async function Home() {
               ></span>
             </div>
             <ul className="card__layout">
-              {projects.map((article, i) => (
-                <ListItem
-                  key={i}
-                  article={article}
-                  link={`/projects/${article.slug}`}
-                  cta="See more"
-                ></ListItem>
+              {allProjects.map((article) => (
+                <article key={article._id}>
+                  <ListItem
+                    article={article}
+                    link={article.slug}
+                    cta="See more"
+                  ></ListItem>
+                </article>
               ))}
             </ul>
           </section>
@@ -240,36 +251,17 @@ export default async function Home() {
               ></span>
             </div>
             <ul className="card__layout">
-              {/* <ListItem
-                article={
-                  {
-                    label: 'MSc Thesis',
-                    year: 2018,
-                    title:
-                      '"Keep Going!": Understanding the Implications of Coaching through Fitness Apps to Support Physical Training',
-                  } as Frontmatter
-                }
-                target="_blank"
-                link="https://uclic.ucl.ac.uk/content/2-study/4-current-taught-course/1-distinction-projects/12-18/stoica_ralucaalexandra_2018.pdf"
-                cta="See more"
-              ></ListItem> */}
-              {research.map((article, i) => (
-                <ListItem
-                  key={i}
-                  article={article}
-                  link={`/research/${article.slug}`}
-                  cta="See more"
-                ></ListItem>
+              {allResearch.map((article) => (
+                <article key={article._id}>
+                  <ListItem
+                    article={article}
+                    link={article.slug}
+                    cta="See more"
+                  ></ListItem>
+                </article>
               ))}
             </ul>
           </section>
-
-          {/* <section id="contact" data-nav="contact">
-            <div className="heading">
-              <h2>Connect</h2>
-            </div>
-            
-          </section> */}
         </main>
       </div>
     </>

@@ -80,7 +80,7 @@
 }
 
 html,
-html[data-theme='light'],
+html.light,
 [color-scheme='light'] {
   color-scheme: light;
 
@@ -98,7 +98,7 @@ html[data-theme='light'],
   --highlight-text: var(--text1);
 }
 
-html[data-theme='dark'],
+html.dark,
 [color-scheme='dark'] {
   color-scheme: dark;
 

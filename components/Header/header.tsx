@@ -1,8 +1,8 @@
 'use client';
-import { a, useSpring, config } from '@react-spring/web';
+import { a, config, useSpring } from '@react-spring/web';
 import { CSSProperties, useCallback, useEffect, useRef, useState } from 'react';
 import Logo from '../Logo/logo';
-import ThemeToggle from '../ThemeContext/themeToggle';
+import { ModeToggle } from '../mode-toggle';
 import styles from './header.module.scss';
 
 type HeaderProps = {
@@ -66,7 +66,7 @@ export default function Header({ sticky, title }: HeaderProps) {
           </p>
         )}
         <div>
-          <ThemeToggle />
+          <ModeToggle />
         </div>
       </a.div>
     </header>

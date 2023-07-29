@@ -1,13 +1,13 @@
 'use client';
 import Image from 'next/image';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import LottieArrow from '../Lottie/lottie';
-import { ThemeContext } from '../ThemeContext/themeContext';
+import { useTheme } from 'next-themes';
 import styles from './heroAnimation.module.scss';
 
 export default function HeroAnimation() {
   const [isHovered, setIsHovered] = useState(false);
-  let { theme } = useContext(ThemeContext);
+  let { theme } = useTheme();
 
   return (
     <>

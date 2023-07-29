@@ -1,14 +1,14 @@
-import { Frontmatter } from '@/lib/types';
 import Link from 'next/link';
 import React from 'react';
 import styles from './listItem.module.scss';
+import type { Project, Research } from '.contentlayer/generated';
 
 export function ListItem({
   article,
   link,
   target = '_self',
 }: {
-  article: Frontmatter;
+  article: Project | Research;
   link: string;
   cta: string;
   target?: '_blank' | '_self';

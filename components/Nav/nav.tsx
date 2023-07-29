@@ -34,10 +34,11 @@ export default function Nav() {
           {links.map((link, i) => (
             <li key={i}>
               <button
-                className={`${styles.link} ${active?.toLowerCase() == link.toLowerCase()
-                  ? styles.active
-                  : ''
-                  }`}
+                className={`${styles.link} ${
+                  active?.toLowerCase() == link.toLowerCase()
+                    ? styles.active
+                    : ''
+                }`}
                 onClick={() => jumpToSection(link)}
               >
                 {link}

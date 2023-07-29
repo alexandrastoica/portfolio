@@ -9,7 +9,7 @@ const INTERSECTION_OPTIONS = {
 const useIntersectionObservation = (
   setActiveId: Dispatch<SetStateAction<string | null>>,
   CONTENT_SELECTOR: string,
-  options = INTERSECTION_OPTIONS
+  options = INTERSECTION_OPTIONS,
 ) => {
   const contentRef = useRef(new Map());
 
@@ -19,8 +19,8 @@ const useIntersectionObservation = (
         contentRef.current.set(content.target.id, content);
       });
 
-      const visibleContent = [...contentRef.current.values()].filter(
-        (content: IntersectionObserverEntry) => content.isIntersecting
+      const visibleContent = Array.from(contentRef.current.values()).filter(
+        (content: IntersectionObserverEntry) => content.isIntersecting,
       );
 
       const newId = visibleContent[0]?.target.id;
