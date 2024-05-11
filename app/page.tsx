@@ -108,24 +108,18 @@ export default function Home() {
             </p>
             <br></br>
             <p>
-              With a background in Engineering and{' '}
-              <a
-                href="https://uclic.ucl.ac.uk/content/2-study/4-current-taught-course/1-distinction-projects/12-18/stoica_ralucaalexandra_2018.pdf"
-                target="_blank"
-              >
-                Human-Computer Interaction
-              </a>
-              , I combine expertise in design systems, product thinking, and
-              user-centred design to create accessible, reliable, and delightful
-              user experiences.{' '}
+              With a background in Engineering and Human-Computer Interaction,
+              I combine expertise in design systems, product thinking, and
+              user-centred design to build accessible, reliable, and delightful
+              user experiences.
             </p>
             <br></br>
             <p>
               Currently building{' '}
-              <a href="https://hicoral.com/" target="_blank">
-                Coral
+              <a href="https://tryarcane.com/" target="_blank" rel="noopener">
+                Arcane - the AI Marketing Tool
               </a>{' '}
-              <span aria-hidden>🪸</span>. Previously, I worked with clients
+              <span aria-hidden>🔮</span>. Previously, I worked with clients
               such as Google, Android Developers, Area 120, and Protocol Labs.
             </p>
             <br></br>
