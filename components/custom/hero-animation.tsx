@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import { cn } from '@/lib/utils'
-import LottieArrow from '@/components/lottie/lottie'
+import { LottieArrow } from '@/components/lottie/lottie'
 
 export default function HeroAnimation() {
   const [isHovered, setIsHovered] = useState(false)
