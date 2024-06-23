@@ -1,7 +1,14 @@
-'use client';
-import Lottie from 'lottie-react';
-import arrowAnimation from './arrow.json';
+'use client'
+import Lottie from 'lottie-react'
+import arrowAnimation from './arrow.json'
 
 export default function LottieArrow() {
-  return <Lottie animationData={arrowAnimation} autoPlay loop={false} />;
+  return (
+    <Lottie
+      className="lottie-stroke"
+      animationData={arrowAnimation}
+      autoPlay
+      loop={false}
+    />
+  )
 }

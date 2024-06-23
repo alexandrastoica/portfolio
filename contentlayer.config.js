@@ -1,4 +1,4 @@
-import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+import { defineDocumentType, makeSource } from 'contentlayer2/source-files'
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -10,7 +10,7 @@ const computedFields = {
     type: 'string',
     resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
   },
-};
+}
 
 export const Project = defineDocumentType(() => ({
   name: 'Project',
@@ -55,7 +55,7 @@ export const Project = defineDocumentType(() => ({
     },
   },
   computedFields,
-}));
+}))
 
 export const Research = defineDocumentType(() => ({
   name: 'Research',
@@ -100,9 +100,9 @@ export const Research = defineDocumentType(() => ({
     },
   },
   computedFields,
-}));
+}))
 
 export default makeSource({
   contentDirPath: './content',
   documentTypes: [Project, Research],
-});
+})

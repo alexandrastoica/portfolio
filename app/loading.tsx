@@ -1,8 +1,11 @@
 export default function Loading() {
-  // Or a custom loading skeleton component
   return (
-    <main className="loading__wrapper">
-      <p>Loading...</p>
+    <main>
+      <div className="relative flex h-[calc(100vh-210px)] justify-center pb-8">
+        <div className="pr-12">
+          <p>Loading...</p>
+        </div>
+      </div>
     </main>
-  );
+  )
 }

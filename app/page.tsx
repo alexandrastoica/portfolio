@@ -1,263 +1,230 @@
-import { allProjects, allResearch } from '@/.contentlayer/generated';
-import Header from '@/components/Header/header';
-import HeroAnimation from '@/components/HeroAnimation/heroAnimation';
-import IconButton from '@/components/IconButton/iconButton';
-import { ListItem } from '@/components/ListItem/listItem';
-import Nav from '@/components/Nav/nav';
+import { allProjects, allResearch } from '@/.contentlayer/generated'
+import Header from '@/components/custom/header'
+import HeroAnimation from '@/components/custom/hero-animation'
+import { ListItem } from '@/components/custom/list-item'
+import Nav from '@/components/custom/nav'
+import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
+import { Wave } from '@/components/wave'
 import {
   FileTextIcon,
   GitHubLogoIcon,
   LinkedInLogoIcon,
-} from '@radix-ui/react-icons';
-import { CSSProperties } from 'react';
+} from '@radix-ui/react-icons'
+import { CSSProperties, Fragment } from 'react'
 
 export default function Home() {
   return (
     <>
-      <div className="wave-bg-color">
-        <div className="wave-bg">
-          <svg
-            className="wave"
-            viewBox="0 24 150 28"
-            preserveAspectRatio="none"
-          >
-            <defs>
-              <path
-                id="page-divide"
-                fill="var(--color-wave)"
-                x="50"
-                y="0"
-                d="M-160 44c30 0 
-                  58-18 88-18s
-                  58 18 88 18 
-                  58-18 88-18 
-                  58 18 88 18
-                  v44h-352z"
-              ></path>
-            </defs>
-            <g>
-              <use
-                xlinkHref="#page-divide"
-                x="50"
-                y="0"
-                fill="var(--color-wave)"
-              ></use>
-            </g>
-          </svg>
-        </div>
-
+      <div className="wave-gradient">
+        <Wave />
         <Header />
         <main>
-          <div className="header__content">
-            <div className="header__text">
+          <div className="relative flex justify-center pb-8">
+            <div className="pr-12">
               <h1>
                 Hi there! I&apos;m Alexandra, a{' '}
-                <span className="stroke">frontend</span> and<br></br>
+                <span className="stroke">{'<'}</span>
+                <span className="stroke">frontend</span>
+                <span className="stroke">{'>'}</span> and<br></br>
                 <span className="box">UX</span> engineer.
               </h1>
             </div>
-            <div className="header__animation">
+            <div className="hidden sm:block">
               <HeroAnimation />
             </div>
           </div>
           <Nav />
 
-          <section id="about" data-nav="about">
-            <div className="heading">
-              <span
-                aria-hidden="true"
-                className="line"
+          <section id="about" data-nav="about" className="mb-6">
+            <div className="relative">
+              <Separator
+                className="line-gradient absolute -left-7 -top-5 h-[200px] dark:opacity-80"
+                orientation="vertical"
                 style={
                   {
-                    top: '-48px',
-                    left: '-24px',
-                    height: '200px',
-                    '--color': 'hsl(var(--mint) / 40%)',
+                    '--degrees': '0deg',
+                    '--color': 'hsl(var(--mint))',
                   } as CSSProperties
                 }
-              ></span>
+              />
+
               <h2>About me</h2>
-              <span
-                aria-hidden="true"
-                className="line"
-                data-orientation="horizontal"
+              <Separator
+                orientation="horizontal"
+                className="line-gradient absolute -left-20 bottom-0 w-[200px] dark:opacity-80"
                 style={
                   {
-                    bottom: '0',
-                    left: '-88px',
-                    '--color': 'hsl(var(--pink) / 20%)',
+                    '--degrees': '90deg',
+                    '--color': 'hsl(var(--pink) / 80%)',
                   } as CSSProperties
                 }
-              ></span>
-              <span
-                aria-hidden="true"
-                className="line"
-                data-orientation="horizontal"
+              />
+              <Separator
+                orientation="horizontal"
+                className="line-gradient absolute -left-20 top-8 w-[200px] dark:opacity-80"
                 style={
                   {
-                    bottom: '-10px',
-                    left: '-88px',
-                    '--color': 'hsl(var(--mint) / 40%)',
+                    '--degrees': '90deg',
+                    '--color': 'hsl(var(--mint) / 90%)',
                   } as CSSProperties
                 }
-              ></span>
+              />
             </div>
-            <p>
+            <p className="mb-3">
               I am passionate about crafting purposeful products{' '}
               <span aria-hidden>💡</span>
             </p>
-            <br></br>
-            <p>
-              With a background in Engineering and Human-Computer Interaction,
-              I combine expertise in design systems, product thinking, and
+            <p className="mb-3">
+              With a background in Engineering and Human-Computer Interaction, I
+              combine expertise in design systems, product thinking, and
               user-centred design to build accessible, reliable, and delightful
               user experiences.
             </p>
-            <br></br>
-            <p>
+            <p className="mb-2">
               Currently building{' '}
-              <a href="https://tryarcane.com/" target="_blank" rel="noopener">
-                Arcane - the AI Marketing Tool
+              <a href="https://tryarcane.com/" className="link">
+                Arcane
               </a>{' '}
               <span aria-hidden>🔮</span>. Previously, I worked with clients
               such as Google, Android Developers, Area 120, and Protocol Labs.
             </p>
-            <br></br>
-            <ul className="social__layout">
-              <li>
-                <IconButton
-                  icon={<LinkedInLogoIcon />}
-                  tooltip="LinkedIn"
-                  target="_blank"
+            <ul className="m-0 flex list-none gap-1 p-0">
+              <li className="focus-within:-translate-y-1 hover:-translate-y-1">
+                <a
                   href="https://www.linkedin.com/in/alexandrastoica"
-                />
-              </li>
-              <li>
-                <IconButton
-                  icon={<GitHubLogoIcon />}
-                  tooltip="GitHub"
                   target="_blank"
-                  href="https://github.com/alexandrastoica"
-                />
+                  className="rounded-sm"
+                >
+                  <span className="sr-only">Check out my Linkedin</span>
+                  <Button variant="link" size="icon" tabIndex={-1}>
+                    <LinkedInLogoIcon />
+                  </Button>
+                </a>
               </li>
-              <li>
-                <IconButton
-                  icon={<FileTextIcon />}
-                  tooltip="CV"
+              <li className="focus-within:-translate-y-1 hover:-translate-y-1">
+                <a
+                  href="https://github.com/alexandrastoica"
+                  target="_blank"
+                  className="rounded-sm"
+                >
+                  <Button variant="link" size="icon" tabIndex={-1}>
+                    <span className="sr-only">Check out my GitHub</span>
+                    <GitHubLogoIcon />
+                  </Button>
+                </a>
+              </li>
+              <li className="focus-within:-translate-y-1 hover:-translate-y-1">
+                <a
                   href="https://read.cv/alexandrastoica"
                   target="_blank"
-                />
+                  className="rounded-sm"
+                >
+                  <span className="sr-only">Check out my cv</span>
+                  <Button variant="link" size="icon" tabIndex={-1}>
+                    <FileTextIcon />
+                  </Button>
+                </a>
               </li>
             </ul>
           </section>
 
-          <section id="projects" data-nav="projects">
-            <div className="heading">
-              <span
-                aria-hidden="true"
-                className="line"
-                data-orientation="horizontal"
+          <section id="projects" data-nav="projects" className="mb-6">
+            <div className="relative">
+              <Separator
+                orientation="horizontal"
+                className="line-gradient absolute -left-20 top-6 w-[200px] dark:opacity-80"
                 style={
                   {
-                    bottom: '0',
-                    left: '-88px',
-                    '--color': 'hsl(var(--pink) / 20%)',
+                    '--degrees': '90deg',
+                    '--color': 'hsl(var(--pink) / 90%)',
                   } as CSSProperties
                 }
-              ></span>
-              <span
-                aria-hidden="true"
-                className="line"
+              />
+              <Separator
+                orientation="vertical"
+                className="line-gradient absolute -left-6 -top-12 h-[200px] dark:opacity-80"
                 style={
                   {
-                    top: '-48px',
-                    left: '-24px',
-                    height: '200px',
-                    '--color': 'hsl(var(--mint) / 40%)',
+                    '--degrees': '0deg',
+                    '--color': 'hsl(var(--mint) / 80%)',
                   } as CSSProperties
                 }
-              ></span>
+              />
+
               <h2>Projects</h2>
-              <span
-                aria-hidden="true"
-                className="line"
-                data-orientation="horizontal"
+              <Separator
+                orientation="horizontal"
+                className="line-gradient absolute -left-12 top-7 w-[200px] dark:opacity-80"
                 style={
                   {
-                    bottom: '-10px',
-                    left: '-88px',
-                    '--color': 'hsl(var(--pink) / 30%)',
+                    '--degrees': '90deg',
+                    '--color': 'hsl(var(--pink) / 80%)',
                   } as CSSProperties
                 }
-              ></span>
+              />
             </div>
-            <ul className="card__layout">
+            <ul className="custom-blur flex flex-col gap-4">
               {allProjects.map((article) => (
-                <article key={article._id}>
+                <Fragment key={article._id}>
                   <ListItem
                     article={article}
                     link={article.slug}
                     cta="See more"
                   ></ListItem>
-                </article>
+                </Fragment>
               ))}
             </ul>
           </section>
 
-          <section id="research" data-nav="research">
-            <div className="heading">
-              <span
-                aria-hidden="true"
-                className="line"
+          <section id="research" data-nav="research" className="mb-8">
+            <div className="relative">
+              <Separator
+                orientation="horizontal"
+                className="line-gradient absolute -left-20 -top-1 w-[200px] dark:opacity-80"
                 style={
                   {
-                    top: '-32px',
-                    left: '-32px',
-                    height: '200px',
-                    '--color': 'hsl(var(--pink) / 30%)',
+                    '--degrees': '90deg',
+                    '--color': 'hsl(var(--pink) / 80%)',
                   } as CSSProperties
                 }
-              ></span>
-              <span
-                aria-hidden="true"
-                className="line"
+              />
+              <Separator
+                orientation="vertical"
+                className="line-gradient absolute -left-4 -top-8 h-[200px] dark:opacity-80"
                 style={
                   {
-                    top: '-48px',
-                    left: '-48px',
-                    height: '200px',
-                    '--color': 'hsl(var(--mint) / 30%)',
+                    '--degrees': '0deg',
+                    '--color': 'hsl(var(--mint) / 90%)',
                   } as CSSProperties
                 }
-              ></span>
+              />
               <h2>Research</h2>
-              <span
-                aria-hidden="true"
-                className="line"
-                data-orientation="horizontal"
+              <Separator
+                orientation="vertical"
+                className="line-gradient absolute -left-6 -top-12 h-[200px] dark:opacity-80"
                 style={
                   {
-                    bottom: '-10px',
-                    left: '-88px',
-                    '--color': 'hsl(var(--mint) / 30%)',
+                    '--degrees': '0deg',
+                    '--color': 'hsl(var(--mint) / 70%)',
                   } as CSSProperties
                 }
-              ></span>
+              />
             </div>
-            <ul className="card__layout">
+            <ul className="custom-blur flex flex-col gap-4">
               {allResearch.map((article) => (
-                <article key={article._id}>
+                <Fragment key={article._id}>
                   <ListItem
                     article={article}
                     link={article.slug}
                     cta="See more"
                   ></ListItem>
-                </article>
+                </Fragment>
               ))}
             </ul>
           </section>
         </main>
       </div>
     </>
-  );
+  )
 }
