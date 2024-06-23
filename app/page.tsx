@@ -83,7 +83,7 @@ export default function Home() {
             </p>
             <p className="mb-2">
               Currently building{' '}
-              <a href="https://tryarcane.com/" className="link">
+              <a href="https://tryarcane.com/" target="_blank" className="link">
                 Arcane
               </a>{' '}
               <span aria-hidden>🔮</span>. Previously, I worked with clients
