@@ -11,7 +11,6 @@ export default function Nav() {
   useIntersectionObservation(setActive, SECTION_ATTR)
 
   useEffect(() => {
-    if (links.length > 0) return
     const sections = Array.from(document.querySelectorAll(SECTION_ATTR))
     let generatedLinks: string[] = []
     sections.forEach((section) => generatedLinks.push(section.id))

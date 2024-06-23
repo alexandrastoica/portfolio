@@ -1,10 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
-import styles from './listItem.module.scss'
 import type { Project, Research } from '.contentlayer/generated'
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
