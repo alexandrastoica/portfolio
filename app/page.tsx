@@ -96,8 +96,8 @@ export default function Home() {
                   target="_blank"
                   className="rounded-sm"
                 >
-                  <span className="sr-only">Check out my Linkedin</span>
                   <Button variant="link" size="icon" tabIndex={-1}>
+                    <span className="sr-only">Check out my Linkedin</span>
                     <LinkedInLogoIcon />
                   </Button>
                 </a>
@@ -120,8 +120,8 @@ export default function Home() {
                   target="_blank"
                   className="rounded-sm"
                 >
-                  <span className="sr-only">Check out my cv</span>
                   <Button variant="link" size="icon" tabIndex={-1}>
+                    <span className="sr-only">Check out my cv</span>
                     <FileTextIcon />
                   </Button>
                 </a>
